@@ -1,21 +1,29 @@
-/**index.wxss**/
-.userinfo {
+.indexSwiper swiper {
+  /* 轮播图的高度等于图片的高度 */
+  height: 340rpx;
+}
+.indexCate {
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.indexCate navigator {
+  flex: 1;
+  padding: 10rpx;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.indexFloor .floorList {
+  padding: 0 10rpx;
+  overflow: hidden;
 }
-
-.usermotto {
-  margin-top: 200px;
+.indexFloor .floorList navigator {
+  width: 33.33%;
+  float: left;
+}
+.indexFloor .floorList navigator:nth-last-child(-n+4) {
+  height: 207.97413793rpx;
+  border-left: 10rpx solid #fff;
+}
+.indexFloor .floorList navigator:nth-last-child(-n+2) {
+  border-top: 10px solid #fff;
+}
+.indexFloor .floorList navigator image {
+  height: 100%;
 }
