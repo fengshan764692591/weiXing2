@@ -1,0 +1,28 @@
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_1396387_p0mvl3thi3g.eot?t=1567914542501'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_1396387_p0mvl3thi3g.eot?t=1567914542501#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAM8AAsAAAAAB8wAAALvAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDDAqDEIJxATYCJAMQCwoABCAFhG0HTRvYBhHVk/VkPxJjWwf5sKt8FU00ZuIBsuvrVVfN315IjMwYQgilZ2RgdvFkPsD/4pyz7+WFibobylv06Acp8NKcfOLeafM8sPksy2WugZ+6AOOAAhpjWBTRAInCTHICbuOVrZcJKKOBdsKwEeOmySXWrICwbvXKxfKcWWqpDXJBSc3GJJxVkGfHso9wJnx/+FuXkJMpRNbCSSuGLzPot76/9Y97i3vN80kk8zkhbCOiHRJhVq17ihin24nKaOmkBfsaFfitf3F+6+uLdzuCIBMJ9Nc51eVAN6jiLUlcHoHf+plkdyhBmQjYRo6y2IE7RK/XmhRk5Uqnyjgulauy9PidO3vv3i17+82+10tvvNz76kT0Ha2YUXHazH33ylSYUUbZ+eVDuRnl55bpddiisqHM3G+/nfn119O/+mraN99snvHm2xAoZ2SExVNOfDtw+p49lT8r36T8Z5WvdO3RtRlfZP/oV3V907nLm52/VqhcYV3jPVsGDT7b8L9BL2sv/Gts3WDAgtfn3w56682bbN2ZM+syCFihJ08Hf2j7ySdtmq3olR158eIIFBlryY4wgV4rml2rf8omUDzuiyFDPGIO3I/sm3Dj/MKK/f7Pyybw/bnzHbChKImQy+gt+YskPduSLrMsKalyV2zcmHRQABnKKINirL+KX+bQVu+dJMhzEgGZUuojyjUjJ3o7FJTVDSVyA1FGWyO3l1XVFlFIpdHGIUJQyWNkKniDqJKPyYn+Mwpq+BclKoWIMuhX2B24tQ9GHAlHxgWmP5g5RenYWES1N1RvP1JWFjJfSMXEoG+6Yu6KEWmOJeWjBmYJklKAC12H3ifIlCzO3GjmfGhbWfegZk6hEo4IGjG0AJM/YMySSPrdmSi9/gYpb96IWgg1/hdECtM/6DW6HuSrOvYi3Ms9xYcyYEwCEkkCcKFxyPMSkOvHWWjGGnpEMjto7U6yr7pZXxu+cA+UYY1KIQsxpFCwufdIzVjeShy39bxrqCoA') format('woff2'),
+  url('//at.alicdn.com/t/font_1396387_p0mvl3thi3g.woff?t=1567914542501') format('woff'),
+  url('//at.alicdn.com/t/font_1396387_p0mvl3thi3g.ttf?t=1567914542501') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_1396387_p0mvl3thi3g.svg?t=1567914542501#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconicon-test:before {
+  content: "\e63b";
+}
+
+.iconicon-test1:before {
+  content: "\e63c";
+}
+
+.iconicon-test2:before {
+  content: "\e63d";
+}
