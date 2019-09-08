@@ -16,9 +16,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "乐多多商城",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#eb4450",
+    "navigationBarTitleText": "购物商城",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#666",
