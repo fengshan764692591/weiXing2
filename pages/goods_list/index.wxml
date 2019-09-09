@@ -1,2 +1,23 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<SearchInput></SearchInput>
+<Taps tabs="{{tabs}}" binditemChange="handleTabs">
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="firstTab">
+      <view class="goodsGroup"
+      wx:for="{{goodsList}}"
+      wx:key="goods_id"
+      >
+        <!-- 左侧图片 -->
+        <view class="goodsImag">
+          <image class="" src="{{item.goods_small_logo || 'http://img1.imgtn.bdimg.com/it/u=1049543977,3251089012&fm=26&gp=0.jpg'}}" mode="widthFix" lazy-load="true"/>
+        </view>
+        <!-- 右侧文字 -->
+        <view class="goodsInfo">
+          <view class="goodsName">{{item.goods_name}}</view>
+          <view class="goodsPrice">￥ {{item.goods_price}}</view>
+        </view>
+      </view>
+    </view>
+  </block>  
+  <block wx:elif="{{tabs[1].isActive}}">1</block>  
+  <block wx:elif="{{tabs[2].isActive}}">2</block>  
+</Taps>
