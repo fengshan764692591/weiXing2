@@ -1,0 +1,50 @@
+
+.cateContainer{
+  height: ~'calc(100vh - 90rpx)';
+  display: flex;
+  .leftMenu{
+    flex: 1;
+    .menuItem{
+      height: 80rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30rpx;
+    }
+    .active{
+      color: var(--themeColor);
+      border-left: 5rpx solid currentColor;
+    }
+  }
+  .rightContent{
+    flex: 3;
+    .goodsGroup{
+      .goodsTitle{
+        height: 80rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .delimiter{
+          color:#ccc;
+        }
+        .goodsName{
+          color: #000;
+          font-size: 30rpx;
+         padding: 0 10rpx;
+        }
+      }
+      .goodsList{
+        display: flex;
+        flex-wrap: wrap;
+        navigator{
+          width: 33.33%;
+          text-align: center;
+          image{
+            width: 50%;
+          }
+          .carGoodsName{}
+        }
+      }
+    }
+  }
+}

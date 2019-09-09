@@ -1,66 +1,46 @@
-// pages/category/index.js
+//Page Object
+import {request} from "../../request/index.js";
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    // 左侧的菜单
+    leftMenuList:[],
+    // 右侧的商品数据
+    rightGoodsList:[],
+    currentIndex:0,
+    scrollTop:0,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  // 接口数据返回值
+  Cates:[],
+  onLoad(){
+   this.getCategoryList();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  // 获取分类数据
+  getCategoryList(){
+    request({url:'/categories'})
+    .then((result) => {
+      // 把接口数据赋值全局变量
+      this.Cates = result;
+      const leftMenuList = this.Cates.map(v=>({cat_id:v.cat_id,cat_name:v.cat_name}));
+      const rightGoodsList = this.Cates[0].children;
+      // console.log(result);
+      this.setData({
+        leftMenuList,
+        rightGoodsList
+      });
+    });
   },
+  // 获取被点击的索引
+  handlMenuchange(e){
+    const {index} = e.currentTarget.dataset;
+    // 点击之后从新赋值
+    const rightGoodsList = this.Cates[index].children;
+    // 3.点击在最上面的位置
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    this.setData({
+      currentIndex:index,
+      rightGoodsList,
+      scrollTop:0,
+    }); 
   }
-})
+});
+  
