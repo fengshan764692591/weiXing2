@@ -12,7 +12,28 @@ Page({
   // 接口数据返回值
   Cates:[],
   onLoad(){
-   this.getCategoryList();
+    // 获取缓存数据
+    const cates = wx.getStorageSync("cates");
+    if(!cates){
+      this.getCategoryList();
+    }else{
+      // 有缓存数据，判断有没有过期 10s
+      if(Date.now()-cates.time>1000*10){
+        //  过期了
+        this.getCategoryList();
+      }else{
+        // 获取缓存数据
+        const catesData = cates.data;
+        this.Cates = catesData;
+        const leftMenuList = this.Cates.map(v=>({cat_id:v.cat_id,cat_name:v.cat_name}));
+        const rightGoodsList = this.Cates[0].children;
+        // console.log(result);
+        this.setData({
+          leftMenuList,
+          rightGoodsList
+        });
+      }
+    }
   },
   // 获取分类数据
   getCategoryList(){
@@ -20,6 +41,9 @@ Page({
     .then((result) => {
       // 把接口数据赋值全局变量
       this.Cates = result;
+      // 把值存到本地
+      wx.setStorageSync("cates",{time:Date.now(),data:this.Cates});
+        
       const leftMenuList = this.Cates.map(v=>({cat_id:v.cat_id,cat_name:v.cat_name}));
       const rightGoodsList = this.Cates[0].children;
       // console.log(result);
