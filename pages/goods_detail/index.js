@@ -1,66 +1,47 @@
-// pages/goods_detail/index.js
+import {request} from "../../request/index.js"
 Page({
 
   /**
    * 页面的初始数据
+   * 图片的放大效果，
+   * 1 先绑定一个事件
+   * 2. 调用微信内部的方法
    */
   data: {
-
+     goodsInfo:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad(option){
+  //  console.log(option)
+  this.getGoodsDetail(option.goods_id);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  // 获取商品详情
+  getGoodsDetail(goods_id){
+    request({url:"/goods/detail",data:{goods_id}})
+    .then((result)=>{
+      // console.log(result);
+      this.setData({
+        goodsInfo:{
+          goods_name:result.goods_name,
+          goods_price:result.goods_price,
+          pics:result.pics,
+          goods_introduce:result.goods_introduce
+        }
+      });
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 图片的放大效果
+  handlePreviewImage(e){
+  console.log(e)
+   const {index} = e.currentTarget.dataset;
+   const urls = this.data.goodsInfo.pics.map(v=>v.pics_big);
+   const current =urls[index];
+   wx.previewImage({
+     current,
+     urls,
+   });   
   }
-})
+});

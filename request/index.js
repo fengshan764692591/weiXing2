@@ -18,6 +18,7 @@ export const request = (params) => {
       fail: (err) => {
         reject(err);
       },
+      // 成功或失败的回调
       complete:()=>{
         // 关闭请求图标
         ajaxTimes--;
