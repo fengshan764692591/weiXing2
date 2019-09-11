@@ -1,5 +1,6 @@
 //Page Object
 import {request} from "../../request/index.js";
+import {getStorageCate,setStorageCate} from "../../utils/storage.js"
 Page({
   data: {
     // 左侧的菜单
@@ -13,7 +14,8 @@ Page({
   Cates:[],
   onLoad(){
     // 获取缓存数据
-    const cates = wx.getStorageSync("cates");
+    // const cates = wx.getStorageSync("cates");
+    const cates = getStorageCate();
     if(!cates){
       this.getCategoryList();
     }else{
@@ -42,7 +44,8 @@ Page({
       // 把接口数据赋值全局变量
       this.Cates = result;
       // 把值存到本地
-      wx.setStorageSync("cates",{time:Date.now(),data:this.Cates});
+      // wx.setStorageSync("cates",{time:Date.now(),data:this.Cates});
+      setStorageCate({time:Date.now(),data:this.Cates});
         
       const leftMenuList = this.Cates.map(v=>({cat_id:v.cat_id,cat_name:v.cat_name}));
       const rightGoodsList = this.Cates[0].children;

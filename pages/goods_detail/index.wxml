@@ -35,3 +35,27 @@
     </rich-text>  
   </view>
 </view>
+<!-- 底部工具栏开始 -->
+<view class="btmTool">
+  <view class="toolItem">
+    <text class="iconfont icon-kefu"></text>
+    <view class="toolName">客服</view>
+    <button open-type="contact">132</button>
+  </view>
+  <view class="toolItem">
+    <text class="iconfont icon-yixianshi-"></text>
+    <view class="toolName">分享</view>
+     <button open-type="share">132</button>
+  </view>
+  <navigator open-type="switchTab" class="toolItem" url="/pages/cart/index">
+    <text class="iconfont icon-gouwuche"></text>
+    <view class="toolName">购物车</view>
+  </navigator>
+  <view class="toolItem btnCart" bindtap="handleCartAdd">
+    加入购物车
+  </view>
+  <view class="toolItem btnBuy">
+    立即购买
+  </view>
+</view>
+  

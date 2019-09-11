@@ -1,1 +1,122 @@
-/* pages/cart/index.wxss */
+page {
+  padding-bottom: 90rpx;
+}
+.reviceWarp .reviceBtnWarp {
+  padding: 20rpx 0;
+}
+.reviceWarp .reviceBtnWarp button {
+  width: 50%;
+}
+.reviceWarp .reviceUser {
+  display: flex;
+  padding: 20rpx;
+  color: #000;
+  font-size: 30rpx;
+}
+.reviceWarp .reviceUser .revicePhone {
+  text-align: right;
+  flex: 1;
+}
+.cartMain .cartTitle {
+  padding: 20rpx 10rpx;
+  color: var(--themeColor);
+  font-size: 36rpx;
+  font-weight: 600;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+.cartMain .cartContent .cartItem {
+  display: flex;
+  border: 1rpx solid #ccc;
+  padding: 5rpx 0;
+}
+.cartMain .cartContent .cartItem .cartCkt {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartMain .cartContent .cartItem .cartImg {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartMain .cartContent .cartItem .cartImg image {
+  width: 80%;
+}
+.cartMain .cartContent .cartItem .cartInfo {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cartMain .cartContent .cartItem .cartInfo .goodsName {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.cartMain .cartContent .cartItem .cartInfo .goodsPrice {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.cartMain .cartContent .cartItem .cartInfo .goodsPrice .goodsPriceYuan {
+  color: var(--themeColor);
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.cartMain .cartContent .cartItem .cartInfo .goodsPrice .cartTool {
+  display: flex;
+}
+.cartMain .cartContent .cartItem .cartInfo .goodsPrice .cartTool .cartNumEdit {
+  width: 50rpx;
+  height: 50rpx;
+  border: 1rpx solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartMain .cartContent .cartItem .cartInfo .goodsPrice .cartTool .cartNum {
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15rpx;
+}
+.btmTool {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  border: 1px solid #ccc;
+}
+.btmTool .callCheckbox {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btmTool .totalPrice {
+  flex: 5;
+  text-align: right;
+  padding-right: 20rpx;
+}
+.btmTool .totalPrice text {
+  font-size: 34rpx;
+  color: var(--themeColor);
+}
+.btmTool .cartPay {
+  flex: 2;
+  background-color: var(--themeColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34rpx;
+  color: #fff;
+  font-weight: 400;
+}
