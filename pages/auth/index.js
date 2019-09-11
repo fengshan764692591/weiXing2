@@ -1,66 +1,45 @@
 // pages/auth/index.js
+import {request} from "../../request/index.js";
 Page({
 
   /**
    * 页面的初始数据
+   * 获取用户授权信息
    */
   data: {
-
+    code:"",
+    
+  },
+  onLoad(){
+    this.userLogin();
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  // 获取用户信息
+  handleUserInfo(e){
+  //  console.log(e)
+  // const {encryptedData,iv,rawData,signature} = e.detail;
+  // const {code} = this.data;
+  // // 2.3 封装成一个对象
+  // const postParams = {encryptedData,iv,rawData,signature,code};
+  //   request({url:"/users/wxlogin",method:"post",data:postParams})
+  //   .then(res => {
+  //     console.log(res);
+  //   });
+  let token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjkxLCJpYXQiOjE1NjQ5NzMwNTAsImV4cCI6MTAwMTU2NDk3MzA0OX0.ECLmdkgfzmGsNgIscSBDbJ8iKB6zlTzl4FsDBR8wsnM";
+  wx.setStorageSync("token", token);
+    
+  },
+  userLogin(){
+  return  wx.login({
+      timeout:10000,
+      success: (result) => {
+        this.setData({
+          code:result.code
+        });
+      },
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
