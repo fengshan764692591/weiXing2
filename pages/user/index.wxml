@@ -1,2 +1,51 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="userBg">
+  <image class="maxImg" src="http://img0.imgtn.bdimg.com/it/u=1167762755,1289048011&fm=26&gp=0.jpg" mode="widthFix" lazy-load="true" />
+  <!-- 小图象 -->
+  <view class="userIcon">
+    <image class="" src="http://img0.imgtn.bdimg.com/it/u=1167762755,1289048011&fm=26&gp=0.jpg" mode="widthFix" lazy-load="true" />
+    <view class="username">{{userInfo.nickName}}</view>
+  </view>
+</view>
+<view class="userContent">
+  <view class="userMain">
+    <view class="userItem">
+      <navigator>
+        <view class="hisNum">1</view>
+        <view class="hisName">收藏的店铺</view>
+      </navigator>
+      <navigator>
+        <view class="hisNum">1</view>
+        <view class="hisName">收藏的商品</view>
+      </navigator>
+      <navigator>
+        <view class="hisNum">1</view>
+        <view class="hisName">关注的商品</view>
+      </navigator>
+      <navigator>
+        <view class="hisNum">1</view>
+        <view class="hisName">我的足迹</view>
+      </navigator>
+    </view>
+    <view class="orderItem">
+      <view class="ooderTitle">我的订单</view>
+      <view class="orderContent">
+        <navigator url="/pages/order/index?type=1">
+          <view class="iconfont icon-ding_dan"></view>
+          <view class="orderName">全部订单</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=2">
+          <view class="iconfont icon-fukuantongzhi"></view>
+          <view class="orderName">待付款</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=3">
+          <view class="iconfont icon-receipt-address"></view>
+          <view class="orderName">待发货</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=4">
+          <view class="iconfont icon-tuihuotuikuan_dianpu"></view>
+          <view class="orderName">退款\退货</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

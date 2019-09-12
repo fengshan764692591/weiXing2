@@ -1,1 +1,65 @@
 /* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.userBg {
+  height: 45vh;
+  overflow: hidden;
+  position: relative;
+}
+.userBg .maxImg {
+  filter: blur(3rpx);
+}
+.userBg .userIcon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 111;
+  top: 70%;
+  text-align: center;
+}
+.userBg .userIcon image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+.userBg .userIcon .username {
+  color: #fff;
+}
+.userContent {
+  margin-top: 10rpx;
+  padding: 0 20rpx;
+}
+.userContent .userMain .userItem {
+  display: flex;
+  background-color: #fff;
+}
+.userContent .userMain .userItem navigator {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userContent .userMain .userItem navigator .hisNum {
+  color: var(--themeColor);
+}
+.userContent .userMain .orderItem {
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.userContent .userMain .orderItem .ooderTitle {
+  padding: 20rpx;
+  border: 1px solid #ccc;
+}
+.userContent .userMain .orderItem .orderContent {
+  display: flex;
+}
+.userContent .userMain .orderItem .orderContent navigator {
+  padding: 10rpx 0;
+  flex: 1;
+  text-align: center;
+}
+.userContent .userMain .orderItem .orderContent navigator .iconfont {
+  color: var(--themeColor);
+}

@@ -1,0 +1,69 @@
+/* pages/user/index.wxss */
+page{
+  background-color: #edece8;
+}
+.userBg{
+  height: 45vh;
+  overflow: hidden;
+  position: relative;
+  .maxImg{
+    filter:blur(3rpx);
+  }
+  .userIcon{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 111;
+    top: 70%;
+    text-align: center;
+    image{
+      width: 160rpx;
+      height: 160rpx;
+      border-radius: 50%;
+    }
+    .username{
+      color: #fff;
+    }
+  }
+}
+
+.userContent{
+  margin-top: 10rpx;
+  padding: 0 20rpx;
+ .userMain{
+  
+   .userItem{
+    display: flex;
+    background-color: #fff;
+    navigator{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .hisNum{
+        color: var(--themeColor);
+      }
+    }
+   }
+   .orderItem{
+     background-color: #fff;
+     margin-top: 30rpx;
+     .ooderTitle{
+      padding: 20rpx;
+      border: 1px solid #ccc;
+     }
+     .orderContent{
+       display: flex;
+      navigator{
+        padding: 10rpx 0;
+        flex: 1;
+        text-align: center;
+        .iconfont{
+          color: var(--themeColor);
+        }
+      }
+     }
+   }
+ }
+}

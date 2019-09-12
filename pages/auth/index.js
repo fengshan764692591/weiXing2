@@ -27,7 +27,9 @@ Page({
   //   });
   let token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjkxLCJpYXQiOjE1NjQ5NzMwNTAsImV4cCI6MTAwMTU2NDk3MzA0OX0.ECLmdkgfzmGsNgIscSBDbJ8iKB6zlTzl4FsDBR8wsnM";
   wx.setStorageSync("token", token);
-    
+    wx.navigateBack({
+      delta: 1
+    });
   },
   userLogin(){
   return  wx.login({

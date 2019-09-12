@@ -33,3 +33,19 @@ export const getStorageCate = () => {
 export const setStorageCate = (obj) => {
   wx.setStorageSync("cate", obj);
 }
+
+/*
+  获取本地存储中用户信息 取
+  key:键
+*/
+export const getStorageUserInfo = () => {
+  return  wx.getStorageSync("userInfo");
+}
+
+/**
+ * @param {object}  obj 要填充的数据 存
+ * key : 键
+ */
+export const setStorageUserInfo = (userInfo) => {
+  wx.setStorageSync("userInfo",userInfo);
+}
