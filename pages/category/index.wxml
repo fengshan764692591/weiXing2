@@ -1,2 +1,45 @@
+<<<<<<< HEAD
 <!--pages/category/index.wxml-->
 <text>pages/category/index.wxml</text>
+=======
+<SearchInput></SearchInput>
+<view class="cateContainer">
+  <!-- 左侧菜单--> 
+ <scroll-view class="leftMenu"  scroll-y >
+   <view class="menuItem {{index===currentIndex?'active':''}}"
+   bindtap="handlMenuchange"
+   data-index = "{{index}}"
+   wx:for="{{leftMenuList}}"
+   wx:key="cat_id"
+   >
+    {{item.cat_name}}
+   </view>
+ </scroll-view>
+  <!-- 右侧菜单-->
+  <scroll-view scroll-y class="rightContent" scroll-top="{{scrollTop}}">
+    <view class="goodsGroup"
+    wx:for="{{rightGoodsList}}"
+    wx:for-index="index1"
+    wx:for-item="item1"
+    wx:key="cat_id"
+    >
+      <view class="goodsTitle">
+        <view class="delimiter">/</view>
+        <view class="goodsName">{{item1.cat_name}}</view>
+        <view class="delimiter">/</view>
+      </view>
+      <view class="goodsList">
+        <navigator 
+        wx:for="{{item1.children}}"
+        wx:for-index="index2"
+        wx:for-item="item2"
+        wx:key="cat_id"
+        >
+          <image class="" src="{{item2.cat_icon}}" mode="widthFix"/>
+          <view class="carGoodsName">{{item2.cat_name}}</view>
+        </navigator>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+>>>>>>> parent of 0f32f1e... 商品列表完成

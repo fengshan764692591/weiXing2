@@ -48,7 +48,11 @@
 			"list": []
 		},
 		"miniprogram": {
+<<<<<<< HEAD
 			"current": 0,
+=======
+			"current": 1,
+>>>>>>> parent of 0f32f1e... 商品列表完成
 			"list": [
 				{
 					"id": 0,
@@ -56,6 +60,16 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
+<<<<<<< HEAD
+=======
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/category/index",
+					"query": "",
+					"scene": null
+>>>>>>> parent of 0f32f1e... 商品列表完成
 				}
 			]
 		}
