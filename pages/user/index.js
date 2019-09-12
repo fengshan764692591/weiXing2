@@ -9,7 +9,8 @@ Page({
    * 
    */
   data: {
-    userInfo:''
+    userInfo:'',
+    collectLength:0,
   },
   onShow(){
     // 1. 获取用户信息，判断一下
@@ -20,8 +21,10 @@ Page({
       });
       return;
     }
+    const collect = wx.getStorageSync('collect') || [];
     this.setData({
-      userInfo
+      userInfo,
+      collectLength:collect.length
     });
   }
 })

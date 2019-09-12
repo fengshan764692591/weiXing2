@@ -40,6 +40,9 @@ page {
 .goodsNameWarp .goodsNameIcon text {
   font-size: 40rpx;
 }
+.goodsNameWarp .goodsNameIcon .icon-shoucang1 {
+  color: orangered;
+}
 .goodsDetail .goodsDetailTitle {
   color: var(--themeColor);
   font-size: 38rpx;

@@ -12,6 +12,7 @@ Page({
       {id:2,title:"待发货",isActive:false},
       {id:3,title:"退款/退货",isActive:false},
     ],
+    orderList:[],
   },
   // 获取页面参数
   onShow(){
@@ -29,12 +30,22 @@ Page({
     //  console.log(currentPage);
     const {type} = currentPage.options;
     this.getOrderList(type);
+    // 根据不同的type改变index
+    let index = type - 1;
+    this.handleItemTitleIndex(index);
   },
 
   // 监听子组件的事件
   handleItemChange(e){
     // console.log(e.detail)
     const {index} = e.detail;
+    this.handleItemTitleIndex(index);
+    // 单击tab栏切换
+    let type = index + 1;
+    this.getOrderList(type);
+  },
+  // 根据索引获改变标题
+  handleItemTitleIndex(index){
     let {tabs} = this.data;
     // 循环数组
     tabs.forEach((v,i) => i === index ? v.isActive = true : v.isActive = false);
@@ -49,7 +60,14 @@ Page({
     }
     request({url:"/my/orders/all",data:{type},header:header})
     .then(res => {
-      console.log(res);
+      // console.log(res);
+    const orderList = res.orders;
+    orderList.forEach(v =>{
+      v.create_time_cn = (new Date(v.create_time*1000)).toLocaleString();
+    })
+      this.setData({
+        orderList:orderList
+      });
     });
   }
 

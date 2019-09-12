@@ -1,6 +1,21 @@
 <Taps tabs="{{tabs}}" binditemChange="handleItemChange">
-  <block wx:if="{{tabs[0].isActive}}">0</block>
-  <block wx:elif="{{tabs[1].isActive}}">1</block>
-  <block wx:elif="{{tabs[2].isActive}}">2</block>
-  <block wx:elif="{{tabs[3].isActive}}">3</block>
+      <view class="firseTab">
+      <view class="orderItem"
+      wx:for="{{orderList}}"
+      wx:key="order_id"
+      >
+        <view class="orderNum allstyle">
+          <view class="orderName ">订单编号</view>
+          <view class="orderVlaue">{{item.order_number}}</view>
+        </view>
+        <view class="orderPrice allstyle">
+          <view class="orderName">订单价格</view>
+          <view class="orderVlaue">{{item.order_price}}</view>
+        </view>
+        <view class="orderTime allstyle">
+          <view class="orderName">订单日期</view>
+          <view class="orderVlaue">{{item.create_time_cn}}</view>
+        </view>
+      </view>
+    </view>
 </Taps>

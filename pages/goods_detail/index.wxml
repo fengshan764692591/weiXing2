@@ -22,9 +22,12 @@
 <!-- 商品名称 -->
 <view class="goodsNameWarp">
   <view class="goodsName">{{goodsInfo.goods_name}}</view>
-  <view class="goodsNameIcon">
-    <text class="iconfont icon-shoucang1"></text>
+  <view class="goodsNameIcon" bindtap="handleGollect">
+    <text class="iconfont {{isCollect?'icon-shoucang1':'icon-shoucang'}}"></text>
     <view class="iconName">收藏</view>
+    <view>
+      {{isCollect}}
+    </view>
   </view>
 </view>
 <!-- 图文详情 -->

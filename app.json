@@ -47,7 +47,7 @@
       },
       {
         "pagePath": "pages/user/index",
-        "text": "分类",
+        "text": "用户",
         "iconPath": "static/tabs/my.png",
         "selectedIconPath": "static/tabs/my-o.png"
       }
